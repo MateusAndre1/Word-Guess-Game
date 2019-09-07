@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guess That Pokemon!</title>
+    <link rel="stylesheet" href="assests/css/reset.css">
+    <link rel="stylesheet" href="assests/css/bootstrap.css">
+    <link rel="stylesheet" href="assests/css/style.css">
+</head>
+
+<body>
+    <header class="text-center"><img src="assests/images/wordguess3.png" alt="headertilte"></header>
+    <div class="container">
+        <div class="row"><img class="mx-auto img-responsive" src="assests/images/presskey.png" alt="presskey">
+        </div>
+        <div class="row"><img class="mx-auto img-responsive" id="startimg" src="assests/images/pokemon bg.png" alt="">
+        </div>
+        <div class="row text-center">
+            <h3 class="mx-auto" id="currentword">
+                _ _ _ _ _
+            </h3>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <img class="mx-auto img-responsive" src="assests/images/remaining2.png" alt="remaining">
+            <p id="guessesremaining"></p>
+        </div>
+        <div class="row">
+            <img class="mx-auto img-responsive" src="assests/images/wins2.png" alt="wins">
+            <p id="winstrack"></p>
+        </div>
+        <div class="row">
+            <img class="mx-auto img-responsive" src="assests/images/losses.png" alt="losses">
+           
+                <p id="lossestrack">300</p>
+           
+        </div>
+        <div class="row">
+            <div><img class="mx-auto img-responsive" src="assests/images/guessedwrong.png" alt="wrong">
+            </div>
+            <div>
+                <p id="guessedletters"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assests/javascript/game.js"></script>
+</body>
+
+</html>
