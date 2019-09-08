@@ -5,6 +5,7 @@
 // try and make a starting image for each pokemon to be guessed
 // create a function to store variable values
 // have game move through array without restarting the page
+// console.log as much as possible to check functions working properly
 
 var pokemon = ["charizard", "snorlax", "pikachu", "ponyta", "machoke", "meowth", "psyduck"]
 
@@ -19,5 +20,11 @@ var guessesRemaining = 9;
 
 function game() {
     randomPokemon = pokemon[Math.floor(Math.random() * pokemon.length)];
-    
+    totalLetters = randomPokemon.split("");
+    blanks = totalLetters.length;
+    for (var i = 0; i < array.length; i++) {
+        blanksPlusCorrect.push("_");   
+    }
+    document.getElementById("currentword").innerHTML = "  " + blanksAndCorrect.join("  ");
+    console.log(randomPokemon)
 }
