@@ -6,8 +6,18 @@
 // create a function to store variable values
 // have game move through array without restarting the page
 
-var words = ["charizard", "snorlax", "pikachu", "ponyta", "machoke", "meowth", "psyduck"]
+var pokemon = ["charizard", "snorlax", "pikachu", "ponyta", "machoke", "meowth", "psyduck"]
 
 var randomPokemon = "";
 var totalLetters = [];
 var blanks = 0;
+var blanksPlusCorrect = [];
+var wrongGuess = [];
+var wins = 0;
+var losses = 0;
+var guessesRemaining = 9;
+
+function game() {
+    randomPokemon = pokemon[Math.floor(Math.random() * pokemon.length)];
+    
+}
