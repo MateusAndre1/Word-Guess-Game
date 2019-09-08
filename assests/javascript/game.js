@@ -74,3 +74,28 @@ function reset () {
     blanksPlusCorrect = [];
     game ()
 }
+function letterChecker(letter) {
+    var wordLetters = false;
+    for (var i = 0; i < blanks; i++) {
+       if (randomPokemon[i] == letter) {
+           wordLetters = true;
+       }
+        
+    }
+    if (wordLetters) {
+        for (let i = 0; i < blanks; i++) {
+            if (randomPokemon[i] == letter) {
+                blanksPlusCorrect[i] = letter;
+            }
+            
+        }
+    }
+    else {
+        wrongGuess.push(letter);
+        guessesRemaining--;
+    }
+    // console.log(blanksPlusCorrect);
+}
+function final() {
+    
+}
