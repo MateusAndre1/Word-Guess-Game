@@ -24,10 +24,10 @@ function game() {
     randomPokemon = pokemon[Math.floor(Math.random() * pokemon.length)];
     totalLetters = randomPokemon.split("");
     blanks = totalLetters.length;
-    for (var i = 0; i < array.length; i++) {
+    for (var i = 0; i < blanks; i++) {
         blanksPlusCorrect.push("_");   
     }
-    document.getElementById("currentword").innerHTML = "  " + blanksAndCorrect.join("  ");
+    document.getElementById("currentword").innerHTML = "  " + blanksPlusCorrect.join("  ");
     // console.log()
 }
 var charizard = document.getElementById("charizard");
@@ -53,7 +53,7 @@ function audio() {
     }
     else if (randomPokemon === pokemon[3]) {
         ponyta.play();
-        document.getElementById("startimg").src ="./assests/images/ponyta.gif";
+        document.getElementById("startimg").src ="./assests/images/pontya.gif";
     }
     else if (randomPokemon === pokemon[4]) {
         machoke.play();
@@ -97,5 +97,29 @@ function letterChecker(letter) {
     // console.log(blanksPlusCorrect);
 }
 function final() {
-    
+    console.log("wins:" + wins + "| losses:" + losses + "| guesses left:" + guessesRemaining)
+    if (totalLetters.toString() == blanksPlusCorrect.toString()) {
+        wins++;
+        audio()
+        reset()
+        document.getElementById("winstrack").innerHTML = " " + wins;
+    }
+    else if (guessesRemaining === 0) {
+        losses++;
+        reset()
+        document.getElementById("startimg").src = "./assests/images/tryagain.png"
+        document.getElementById("lossestrack").innerHTML = " " + losses;
+    }
+    document.getElementById("currentword").innerHTML = " " + blanksPlusCorrect.join(" ");
+    document.getElementById("guessesremaining").innerHTML = " " + guessesRemaining;
+}
+
+game()
+
+document.onkeyup = function (event) {
+    var guesses = String.fromCharCode(event.keyCode).toLowerCase();
+    letterChecker(guesses);
+    final();
+    // console.log(guesses);
+    document.getElementById("guessedletters").innerHTML = " " + wrongGuess.join(" ");
 }
